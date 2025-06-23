@@ -1,2 +1,6 @@
 first read about 1].env then mongoose then 2]mongo db then 3]public folder .gitignore and .gitkeep then
 4]index.js (in db) then 5]index.js then 6]constants then 7]express.js then 8]CORS then 9]utils and 10]also some part in package.json
+11]user model and video model and what is aggregation pipeline 12] what is JSON data and BSON data
+13] how watch history is tracked -->> whenwe watch and click on any video we puch the id of that video to the watch history which is array of object [{},{},{}..........] 14] what is pipelining what is aggregate paginate what it do why we need what is plugin , why need , what it do
+15] what is bcrypt in npm 16]what is jsonwebtoken 17]what is middleware hooks like pre hook post hook etc.....
+18]
