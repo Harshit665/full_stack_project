@@ -19,4 +19,10 @@ app.use(cookieParser()) // iska kaam sirf itna sa h ki mai mere server s jo user
 
 // read about Middleware and flag (like next flag)
 
-export default app;
+//routes
+import userRouter from "./routes/user.routes.js";
+
+app.use("/api/v1/users",userRouter);
+
+
+export {app};
