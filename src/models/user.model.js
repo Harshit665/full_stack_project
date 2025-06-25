@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema(
 userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();
  
-  this.password = bcrypt.hash(this.password, 10); // hash is a function it takes two things pehla kya hash krna h second kitne rounds lagau like 8 , 10 ,default
+  this.password = await bcrypt.hash(this.password, 10); // hash is a function it takes two things pehla kya hash krna h second kitne rounds lagau like 8 , 10 ,default
   next(); // ab next krne pr prblm aai ki jb bhi hum kuchh bhi change krenge jaise avatar photo anything to ye next kya krega password chnage kr dega mtlb kuchh bhi update krenge to change krta rhega hme chahiye sirf password field change krne pr change ho so if condition lagani padegi 
 }); // this take functionality and then a callback but the call back not in arrow function read the documentation mongoose middleware
 

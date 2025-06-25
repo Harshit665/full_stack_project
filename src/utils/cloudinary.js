@@ -8,7 +8,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET, // Click 'View API Keys' above to copy your API secret
 });
 
-import { v2 as cloudinary } from "cloudinary";
 
 const uploadCloudinary = async ()=>{
     try{
@@ -26,4 +25,4 @@ const uploadCloudinary = async ()=>{
     }
 }
 
-export {uploadCloudinary};
+export { uploadCloudinary };        
