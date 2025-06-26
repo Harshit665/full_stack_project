@@ -21,27 +21,33 @@ const registerUser = asyncHandler( async(req,res) =>{
    // you can also use if condition for each field
    if (
       [fullname,email,username,password].some((field) => 
-      field.trim ==="" )
+      field.trim() ==="" )
    ) {
       throw new apiError(400,"all fields are required")
    }
 
-   const existedUser = User.findOne({
+   const existedUser = await User.findOne({
       $or:[{ username },{ email }]
    })
 
    if (existedUser) {
       throw new apiError(409,"User with Email and username already exists")
    }
-   const avatarLocalPath = req.files?.avatar[0].path;
-   const coverImageLocalPath = req.files?.coverImage[0].path;
+
+   console.log(req.files);
+   
+
+   const avatarLocalPath = req.files?.avatar?.[0]?.path;
+   const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
    if (!avatarLocalPath) {
       throw new apiError(400,"avatar is required")      
    }
 
+   
    const avatar = await uploadCloudinary(avatarLocalPath);
    const coverImage = await uploadCloudinary(coverImageLocalPath);
 
+   
    if (!avatar) {
       throw new apiError(400,"avatar is necessary");
    }

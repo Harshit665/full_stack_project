@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 
-const uploadCloudinary = async ()=>{
+const uploadCloudinary = async (localFilePath)=>{
     try{
         if(!localFilePath) return null
         //uplaoding the file on cloudinary
@@ -20,7 +20,7 @@ const uploadCloudinary = async ()=>{
         return response;
     }
     catch(error){
-        fs.unlinkSync(localFilePath) // remove the lcally saved temporary filr as the upload operaton got failed
+        fs.unlinkSync(localFilePath) // remove the locally saved temporary filr as the upload operaton got failed
         console.log(error);
     }
 }

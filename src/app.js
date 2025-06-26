@@ -20,9 +20,10 @@ app.use(cookieParser()) // iska kaam sirf itna sa h ki mai mere server s jo user
 // read about Middleware and flag (like next flag)
 
 //routes
-import userRouter from "./routes/user.routes.js";
+//import userRouter from "./routes/user.routes.js";
+import router from "./routes/user.routes.js";
 
-app.use("/api/v1/users",userRouter);
+app.use("/api/v1/users",router);
 
 
 export {app};
