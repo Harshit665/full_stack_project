@@ -49,6 +49,8 @@ const userSchema = new mongoose.Schema(
 );
 
  // hame yha krna kya h to password field ko lo encrypt kro aur save kra do
+
+ // yha par hum chhota sa middleware lga rhe h agr password modified nhi hua h to modified mat kro
 userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();
  
